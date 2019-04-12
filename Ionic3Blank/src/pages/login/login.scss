@@ -1,0 +1,14 @@
+page-login {
+    .botones{
+        display:flex;
+        justify-content: space-evenly;
+    }
+    .item-inner{
+        background-color: dark;
+        border-radius: 5px;
+    }
+    .input-wrapper{
+        background-color: transparent;
+        border-radius: 5px;
+    }
+}

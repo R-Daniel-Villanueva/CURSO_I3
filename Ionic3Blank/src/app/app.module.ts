@@ -7,27 +7,39 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { AboutPage } from '../pages/about/about';
+import { LoginPage } from '../pages/login/login';
+import { CreateAccountPage } from '../pages/create-account/create-account';
+import { UserProvider } from '../providers/user/user';
+import { HttpClientModule } from '@angular/common/http';
+import { MessagesProvider } from '../providers/messages/messages';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    AboutPage
+    AboutPage,
+    LoginPage,
+    CreateAccountPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
-    AboutPage
+    AboutPage,
+    LoginPage,
+    CreateAccountPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    UserProvider,
+    MessagesProvider
   ]
 })
 export class AppModule {}
